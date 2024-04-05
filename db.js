@@ -1,10 +1,12 @@
 //responsible to establish database connection
-
+require('dotenv').config();
 const mongoose = require('mongoose');  //act like a bridge(mongoose export)
 
 //define mongodb connection url
-const mongoURL = 'mongodb://localhost:27017/mydatabase' //define url where to define
-
+//const mongoURL = 'mongodb://localhost:27017/mydatabase' //define url where to define (to connect with db)
+//const mongoURL = 'mongodb+srv://helloworld:Nupur05@cluster0.n8ae5qf.mongodb.net/'//online URL
+//const mongoURL = process.env.MONGODB_URL_LOCAL
+const mongoURL = process.env.MONGODB_URL
 //set up mongodb connection
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,

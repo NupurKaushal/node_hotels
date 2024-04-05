@@ -2,8 +2,10 @@
 var fs = require('fs');
 var os = require('os');
 const db = require('./db');
+require('dotenv').config();
 
 var user = os.userInfo();
+const PORT = process.env.PORT || 3000;
 
 console.log(user.username);
 console.log(user);
@@ -52,7 +54,7 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log("listening on port 3000")
 }) //room no.  
 
